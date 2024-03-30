@@ -75,7 +75,8 @@ struct ReviewAndImageStack: View {
       Spacer()
     }
     .sheet(isPresented: $showingImagePicker) {
-      // TODO: Add PHPickerController
+      // Add PHPickerController
+			PHPickerViewController.View(image: $image)
     }
     .alert(isPresented: $showingAlert) {
       .init(

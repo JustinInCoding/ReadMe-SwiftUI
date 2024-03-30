@@ -30,9 +30,22 @@ import PhotosUI
 import SwiftUI
 
 // MARK: - PHPickerViewController.View
-
+extension PHPickerViewController {
+	struct View {
+		@Binding var image: UIImage?
+	}
+}
 
 // MARK: - UIViewControllerRepresentable
+extension PHPickerViewController.View: UIViewControllerRepresentable {
+	func makeUIViewController(context: Context) -> PHPickerViewController {
+		PHPickerViewController(configuration: .init())
+	}
+	
+	func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {
+		
+	}
+}
 
 
 // MARK: - PHPickerViewControllerDelegate
